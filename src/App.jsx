@@ -9,7 +9,7 @@ import { Navbar } from './components/Navbar';
 const App = () => {
 	return (
 		<>
-			<Navbar />
+			<Navbar color="white" textColor="#265073" />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/admin" element={<Admin />} />
