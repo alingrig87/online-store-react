@@ -24,15 +24,13 @@ const Cart = () => {
 		return product;
 	};
 
-	const handleProductQuantity = (productsInCart, productId, operator) => {
+	const handleProductQuantity = (productsInCart, productId, action) => {
 		const currentProduct = productsInCart.find(
 			(product) => product.id === productId
 		);
 		const indexOfProductToBeDeleted = productsInCart.indexOf(currentProduct);
 
-		console.log('current product = ', currentProduct);
-
-		switch (operator) {
+		switch (action) {
 			case 'decrease':
 				if (currentProduct.qt > 1) currentProduct.qt = currentProduct.qt - 1;
 				break;
@@ -115,7 +113,9 @@ const Cart = () => {
 	) : (
 		<div>
 			Cosul este momentan gol, va rugam sa adaugati produse din{' '}
-			<Link to="/">pagina de produse</Link>
+			<Link className="underline text-blue-600" to="/">
+				pagina de produse
+			</Link>
 		</div>
 	);
 };
